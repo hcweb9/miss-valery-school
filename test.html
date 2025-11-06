@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Level Test | Miss Valery's School✨</title>
+
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ✅ Navbar -->
+    <nav class="navbar">
+      <div class="navbar__brand">
+        <a href="index.html">Miss Valery's School✨</a>
+      </div>
+      <ul class="navbar__links">
+        <li class="navbar__item">
+          <a href="index.html" class="navbar__link">Home</a>
+        </li>
+        <li class="navbar__item">
+          <a href="index.html#contact" class="navbar__link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ✅ Test Container -->
+    <main class="test">
+      <h1 class="test__title">English Placement Test</h1>
+      <p class="test__description">
+        Answer all 20 questions to find out your English level.
+      </p>
+
+      <div id="test-container" class="test__container">
+        <!-- Questions will be injected here by JS -->
+      </div>
+
+      <div class="test__controls">
+        <button id="prevBtn" class="btn btn--secondary" disabled>
+          Previous
+        </button>
+        <button id="nextBtn" class="btn btn--primary">Next</button>
+        <button id="resultsBtn" class="btn btn--primary" style="display: none">
+          See Results
+        </button>
+      </div>
+    </main>
+
+    <!-- ✅ Footer -->
+    <footer class="footer">
+      <p>
+        © 2025 Miss Valery's School ✨ | Developed by Hernán Casaoliva @hcweb9
+        <a
+          href="https://your-portfolio-link.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hernán Casaoliva @hcweb9
+        </a>
+      </p>
+    </footer>
+
+    <script src="./assets/js/testMain.js"></script>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+.test {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+
+  &__title {
+    color: $pink-dark;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: $text-color;
+  }
+
+  &__container {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  &__question {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+      background: $bg-light;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: color.scale($pink-main, $lightness: 35%);
+      }
+
+      input {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+/* ✅ Controls */
+.test__controls {
+  display: flex;
+  justify-content: space-between;
+
+  // Shared button size for both
+  .btn {
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px; // ensures equal width
+  }
+
+  // Fix for disabled state so it doesn't grow/shrink
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: white !important;
+    color: $pink-dark !important;
+    border: 2px solid $pink-main !important;
+    padding: 0.7rem 1.2rem !important; // forces same size
+    border-radius: 8px !important;
+    box-sizing: border-box; // avoid growing from borders
+  }
+}
+
+.results {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+
+  &.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.no-underline {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.test__controls.results {
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.test__controls.results .btn {
+  min-width: 140px; /* consistent size for both buttons */
+}
+
+
+/* ✅ Responsive Layout for Test */
+@media (max-width: 600px) {
+  .test {
+    padding: 1.5rem;
+    margin: 1rem;
+    
+    &__title {
+      font-size: 1.6rem;
+    }
+
+    &__description {
+      font-size: 0.95rem;
+    }
+
+    &__question {
+      font-size: 1rem;
+    }
+  }
+
+  .test__controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+
+    .btn {
+      min-width: auto;
+      width: 100%; /* Full width buttons on mobile */
+    }
+  }
+
+  .test__controls.results {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
