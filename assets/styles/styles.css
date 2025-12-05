@@ -269,7 +269,7 @@ body {
   font-weight: bold;
   color: white;
   transition: background 0.3s ease;
-  margin-top: 1.5rem;
+  /*margin-top: 1.5rem;*/
 }
 .btn--primary:hover {
   background: #e695a3;
@@ -675,7 +675,7 @@ body {
 }
 .test__options label {
   background: #fff0f5;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   border-radius: 8px;
   cursor: pointer;
   border: 1px solid transparent;
@@ -692,16 +692,19 @@ body {
 .test__controls {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  /* keep disabled consistent */
 }
 .test__controls .btn {
-  padding: 0.7rem 1.2rem;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 120px;
+  padding: 0.7rem 1.2rem;
 }
 .test__controls .btn:disabled {
   opacity: 0.6;
@@ -709,11 +712,9 @@ body {
   background: white !important;
   color: #e695a3 !important;
   border: 2px solid #ffb6c1 !important;
-  padding: 0.7rem 1.2rem !important;
-  border-radius: 8px !important;
-  box-sizing: border-box;
 }
 
+/* ✅ Results Section */
 .results {
   text-align: center;
   font-size: 1.2rem;
@@ -734,14 +735,14 @@ body {
   display: inline-block;
 }
 
+/* ✅ Results controls layout (Start Again / Contact) */
 .test__controls.results {
   justify-content: center;
   gap: 1rem;
   margin-top: 1.5rem;
 }
-
 .test__controls.results .btn {
-  min-width: 140px; /* consistent size for both buttons */
+  min-width: 140px;
 }
 
 /* ✅ Responsive Layout for Test (mobile & small tablets) */
@@ -774,20 +775,40 @@ body {
   }
   .test__controls .btn {
     width: 100%;
+    margin: 0;
     max-width: none;
   }
-  /* Results buttons stack nicely */
   .test__controls.results {
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
   }
   .test__controls.results .btn {
+    display: block; /* fixes <a> width mismatch */
     width: 100%;
     max-width: 250px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem !important;
+    box-sizing: border-box;
   }
+  .test__controls.results .test__controls.results .btn--secondary {
+    padding: 0.75rem 1rem !important;
+  }
+  /* Fix width mismatch */
+  /*.test__controls.results .btn {
+    flex: initial;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Remove side shift on Contact button */
+  /*.btn--secondary {
+    margin-left: 0 !important;
+  }*/
 }
-/* ✅ Ultra small phones (under 400px) */
+/* ✅ Tiny phones */
 @media (max-width: 400px) {
   .test {
     padding: 1rem;

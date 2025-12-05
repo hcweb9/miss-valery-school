@@ -156,7 +156,7 @@ function showResults() {
     <h2>🎉 Test Complete!</h2>
     <p>You scored <strong>${score}</strong> out of <strong>${totalQuestions}</strong>.</p>
     <p>Your estimated level: <strong>${level}</strong></p>
-    <div class="test__controls" style="margin-top: 1.5rem;">
+    <div class="test__controls results" style="margin-top: 1.5rem;">
   <button id="restartBtn" class="btn btn--secondary">
     <span style="margin-right: 6px;">🔄</span> Start Again
   </button>

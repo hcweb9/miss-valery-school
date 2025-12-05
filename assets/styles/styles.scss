@@ -329,7 +329,7 @@ body {
 .btn {
   &--primary {
     @include button-base($pink-main, $pink-dark);
-    margin-top: 1.5rem;
+    /*margin-top: 1.5rem;*/
   }
 
   &--secondary {
