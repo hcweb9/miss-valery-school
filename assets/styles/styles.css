@@ -1,11 +1,4 @@
 @charset "UTF-8";
-/*html {
-  scroll-padding-top: var(--nav-height, 80px);
-}*/
-/*[id] {
-  scroll-margin-top: var(--nav-height, 80px);
-}
-*/
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -149,7 +142,6 @@ body {
   text-align: left;
 }
 
-/* make each item a small flex row so emoji + text line up consistently */
 .section__list li {
   display: flex;
   align-items: flex-start;
@@ -165,7 +157,7 @@ body {
 }
 
 .section__list li .icon {
-  flex: 0 0 26px; /* reserve space for emoji/icon */
+  flex: 0 0 26px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -201,7 +193,7 @@ body {
   border-color: rgba(255, 182, 193, 0.5);
 }
 
-/* ✅ Hover effects only for devices that really support hover (like desktops/laptops) */
+/* Hover effects only for devices that really support hover (like desktops/laptops) */
 @media (hover: hover) and (pointer: fine) {
   .hero__img:hover,
   .section__img:hover {
@@ -210,7 +202,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 }
-/* ✅ Courses Section */
+/* Courses Section */
 .section--courses .section__content {
   display: flex;
   flex-direction: column;
@@ -269,7 +261,6 @@ body {
   font-weight: bold;
   color: white;
   transition: background 0.3s ease;
-  /*margin-top: 1.5rem;*/
 }
 .btn--primary:hover {
   background: #e695a3;
@@ -688,7 +679,7 @@ body {
   margin-right: 0.5rem;
 }
 
-/* ✅ Controls */
+/* Controls */
 .test__controls {
   display: flex;
   justify-content: space-between;
@@ -714,7 +705,7 @@ body {
   border: 2px solid #ffb6c1 !important;
 }
 
-/* ✅ Results Section */
+/* Results Section */
 .results {
   text-align: center;
   font-size: 1.2rem;
@@ -735,7 +726,7 @@ body {
   display: inline-block;
 }
 
-/* ✅ Results controls layout (Start Again / Contact) */
+/* Results controls layout (Start Again / Contact) */
 .test__controls.results {
   justify-content: center;
   gap: 1rem;
@@ -745,7 +736,7 @@ body {
   min-width: 140px;
 }
 
-/* ✅ Responsive Layout for Test (mobile & small tablets) */
+/* Responsive Layout for Test (mobile & small tablets) */
 @media (max-width: 768px) {
   .test {
     padding: 1.5rem 1rem;
@@ -794,19 +785,6 @@ body {
   .test__controls.results .test__controls.results .btn--secondary {
     padding: 0.75rem 1rem !important;
   }
-  /* Fix width mismatch */
-  /*.test__controls.results .btn {
-    flex: initial;
-    width: 100%;
-    max-width: 250px;
-    margin: 0 auto;
-    display: block;
-  }
-
-  /* Remove side shift on Contact button */
-  /*.btn--secondary {
-    margin-left: 0 !important;
-  }*/
 }
 /* ✅ Tiny phones */
 @media (max-width: 400px) {

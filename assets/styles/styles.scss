@@ -9,16 +9,6 @@ $text-dark: #333;
 $font-primary: "Poppins", sans-serif;
 $font-hand: "Patrick Hand", cursive;
 
-/*html {
-  scroll-padding-top: var(--nav-height, 80px);
-}*/
-
-// Works for all elements with IDs (like #hero, #home, #about...)
-/*[id] {
-  scroll-margin-top: var(--nav-height, 80px);
-}
-*/
-
 // Button mixin
 @mixin button-base($bg, $hover-bg) {
   background: $bg;
@@ -51,7 +41,7 @@ body {
   justify-content: center;
   text-align: center;
   min-height: 90vh;
-  padding: .5rem;
+  padding: 0.5rem;
 
   &__title {
     font-family: $font-hand;
@@ -126,7 +116,7 @@ body {
       color: $pink-dark;
     }
 
-    // 🔹 Active link style
+    // Active link style
     &.is-active {
       color: $pink-dark;
 
@@ -144,7 +134,7 @@ body {
       }
     }
 
-    // 🔹 Default underline (hidden until hover/active)
+    // Default underline (hidden until hover/active)
     &::after {
       content: "";
       position: absolute;
@@ -191,15 +181,14 @@ body {
 .section__list {
   list-style: none;
   padding: 0;
-  margin: 2rem auto;         // centers the whole list block
-  max-width: 500px;         // <-- match this to .section__img max-width
+  margin: 2rem auto;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  text-align: left;         // keep text readable (left aligned inside the centered block)
+  text-align: left;
 }
 
-/* make each item a small flex row so emoji + text line up consistently */
 .section__list li {
   display: flex;
   align-items: flex-start;
@@ -210,9 +199,11 @@ body {
 }
 
 /* if you want the emoji to keep a fixed column width (very tidy) */
-.section__list li::marker { content: none; } 
+.section__list li::marker {
+  content: none;
+}
 .section__list li .icon {
-  flex: 0 0 26px;          /* reserve space for emoji/icon */
+  flex: 0 0 26px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -227,7 +218,6 @@ body {
   margin-top: 2px;
 }
 
-
 /* ✨ Polished global image hover (keeps layout intact) */
 .hero__img,
 .section__img {
@@ -239,7 +229,8 @@ body {
   border-radius: 12px;
   border: 3px solid rgba(255, 182, 193, 0.3);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
   transform-origin: center center;
 
   &:hover {
@@ -249,7 +240,7 @@ body {
   }
 }
 
-/* ✅ Hover effects only for devices that really support hover (like desktops/laptops) */
+/* Hover effects only for devices that really support hover (like desktops/laptops) */
 @media (hover: hover) and (pointer: fine) {
   .hero__img:hover,
   .section__img:hover {
@@ -259,9 +250,7 @@ body {
   }
 }
 
-
-
-/* ✅ Courses Section */
+/* Courses Section */
 .section--courses {
   .section__content {
     display: flex;
@@ -282,13 +271,6 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
 }
-
-
-
-
-
-
-
 
 //Banner section CTA
 .cta {
@@ -329,7 +311,6 @@ body {
 .btn {
   &--primary {
     @include button-base($pink-main, $pink-dark);
-    /*margin-top: 1.5rem;*/
   }
 
   &--secondary {
@@ -344,7 +325,6 @@ body {
     }
   }
 }
-
 
 /* ✅ Contact Section */
 .section__contact {
@@ -434,8 +414,6 @@ body {
   opacity: 1;
 }
 
-
-
 /* ✨ Sparkle animation for the brand logo */
 .sparkle {
   display: inline-block;
@@ -443,7 +421,8 @@ body {
 }
 
 @keyframes sparkle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     text-shadow: 0 0 6px #ffd6e0, 0 0 12px #ffb6c1; /* soft pink glow */
   }
@@ -452,9 +431,6 @@ body {
     text-shadow: 0 0 3px #ffb6c1;
   }
 }
-
-
-
 
 /* ✅ Footer */
 .footer {
@@ -504,8 +480,6 @@ body {
   }
 }*/
 
-
-
 /* 🌸 RESPONSIVE POLISH for mobile & small tablets */
 @media (max-width: 768px) {
   /* HERO */
@@ -535,17 +509,14 @@ body {
         max-width: 250px;
       }
       .btn--secondary {
-  
-        margin-left: 0rem;}
+        margin-left: 0rem;
+      }
     }
   }
 
   /* SECTIONS */
   .section {
-    
     padding: 0 1rem;
-   
-    
 
     &__title {
       font-size: 1.7rem;
@@ -610,9 +581,7 @@ body {
       max-width: 250px;
       margin-top: 1rem;
     }
-  
   }
-
 
   /* CONTACT */
   .section__contact {
@@ -727,7 +696,6 @@ body {
     opacity: 1;
     pointer-events: auto;
   }
-  
 
   .navbar__item {
     text-align: center;
@@ -738,7 +706,6 @@ body {
     font-size: 1.1rem;
   }
 }
-
 
 /* ✅ Extra fine-tuning for very small screens (phones < 400px) */
 @media (max-width: 400px) {
@@ -763,9 +730,5 @@ body {
     font-size: 0.95rem;
   }
 }
-
-
-
-
 
 @import "test";

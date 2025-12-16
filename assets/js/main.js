@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ✅ Select both buttons
+  // Select both buttons
   const ctaBtn = document.querySelector(".cta .btn--primary");
   const heroBtn = document.querySelector(".hero .btn--secondary");
 
@@ -130,52 +130,51 @@ document.addEventListener("DOMContentLoaded", () => {
   updateActiveOnScroll();
 
   // 6) Contact form submission via Formspree
-const form = document.querySelector(".contact__form");
-if (form) {
-  const status = document.getElementById("form-status");
+  const form = document.querySelector(".contact__form");
+  if (form) {
+    const status = document.getElementById("form-status");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // stop redirect
-    const formData = new FormData(form);
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); // stop redirect
+      const formData = new FormData(form);
 
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
 
-      if (response.ok) {
-        status.textContent = "Thank you! Your message has been sent successfully 💌";
-        status.className = "form__status success";
-        form.reset(); // clear inputs
-      } else {
-        status.textContent = "Oops! There was a problem sending your message. Please try again.";
+        if (response.ok) {
+          status.textContent =
+            "Thank you! Your message has been sent successfully 💌";
+          status.className = "form__status success";
+          form.reset(); // clear inputs
+        } else {
+          status.textContent =
+            "Oops! There was a problem sending your message. Please try again.";
+          status.className = "form__status error";
+        }
+      } catch (error) {
+        status.textContent = "Network error — please try again later.";
         status.className = "form__status error";
       }
-    } catch (error) {
-      status.textContent = "Network error — please try again later.";
-      status.className = "form__status error";
-    }
 
-    // fade out message after a few seconds
-    setTimeout(() => {
-      status.className = "form__status";
-      status.textContent = "";
-    }, 5000);
-  });
-}
+      // fade out message after a few seconds
+      setTimeout(() => {
+        status.className = "form__status";
+        status.textContent = "";
+      }, 5000);
+    });
+  }
 
-// 7) Allow "Enter" key to submit form
-if (form) {
-  form.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault(); // prevent accidental newlines in textarea
-      form.requestSubmit(); // triggers the same async handler above
-    }
-  });
-}
-
-
+  // 7) Allow "Enter" key to submit form
+  if (form) {
+    form.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault(); // prevent accidental newlines in textarea
+        form.requestSubmit(); // triggers the same async handler above
+      }
+    });
+  }
 });
-
